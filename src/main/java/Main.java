@@ -13,15 +13,15 @@ public class Main {
         Queue<Integer> track = new LinkedList<>();
 
         while (true) {
-            System.out.println("Ожидаю ввода этажа: (для завершения введите - 0)");
+            System.out.println("РћР¶РёРґР°СЋ РІРІРѕРґР° СЌС‚Р°Р¶Р°: (РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ РІРІРµРґРёС‚Рµ - 0)");
             String input = scanner.nextLine();
 
             if ("0".equals(input)) {
                 while (!track.isEmpty()) {
-                    System.out.print("этаж " + track.poll() + " -> ");
+                    System.out.print("СЌС‚Р°Р¶  " + track.poll() + " -> ");
                 }
-                System.out.println(" этаж 0");
-                System.out.println("Время затраченное лифтом на маршрут = " + totalSeconds + " с.");
+                System.out.println("СЌС‚Р°Р¶  0");
+                System.out.println("Р’СЂРµРјСЏ Р·Р°С‚СЂР°С‡РµРЅРЅРѕРµ Р»РёС„С‚РѕРј РЅР° РјР°СЂС€СЂСѓС‚ = " + totalSeconds + " СЃ.");
                 break;
             }
             pressButton(input, track);
@@ -43,7 +43,7 @@ public class Main {
             }
             return totalSeconds;
         } else {
-            System.out.println("Такого этажа нет в доме");
+            System.out.println("РўР°РєРѕРіРѕ СЌС‚Р°Р¶Р° РЅРµС‚ РІ РґРѕРјРµ");
         }
         return 0;
     }
