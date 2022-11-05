@@ -24,8 +24,8 @@ public class ElevatorTest {
     public void correctCalculate() {
 
         // given:
-        String start = "3";//обозначение необходимого этажа
-        Queue<Integer> stop = new LinkedList<>();   // необязательный параметр. Нужен, чтоб работал метод.
+        String start = "3";
+        Queue<Integer> stop = new LinkedList<>();   /
         stop.add(3);
         int expected = 25;
 
@@ -38,10 +38,10 @@ public class ElevatorTest {
 
     @Test
     public void ifNotExist() {
-        // в случае, если этаж не существует должно пройти сообщение об этом, но тест "упасть" не должен
+
         // given:
-        String start = "33";//обозначение необходимого этажа
-        Queue<Integer> stop = new LinkedList<>();   // необязательный параметр. Нужен, чтоб работал метод.
+        String start = "33";
+        Queue<Integer> stop = new LinkedList<>();
         stop.add(3);
         int expected = 0;
 
@@ -57,8 +57,8 @@ public class ElevatorTest {
     public void ifAlotOfTime() {
 
         // given:
-        String start = "3";//Нужен, чтоб работал метод.
-        Queue<Integer> stop = new LinkedList<>();  // Нужен, чтоб работал метод.
+        String start = "3";
+        Queue<Integer> stop = new LinkedList<>();
         stop.add(10);
 
         assertTimeout(Duration.ofMillis(50), () -> {
