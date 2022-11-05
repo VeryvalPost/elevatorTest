@@ -1,12 +1,13 @@
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class elevatorTest {
+public class ElevatorTest {
 
     @BeforeAll
     static void init() {
@@ -53,16 +54,15 @@ public class elevatorTest {
     }
 
     @Test
-    public void ifNull() {
+    public void ifAlotOfTime() {
 
         // given:
-        String start = "3";//необязательный параметр. Нужен, чтоб работал метод.
-        Queue<Integer> stop = new LinkedList<>();  // Проверяемый параметр. Должен быть не null.
+        String start = "3";//Нужен, чтоб работал метод.
+        Queue<Integer> stop = new LinkedList<>();  // Нужен, чтоб работал метод.
+        stop.add(10);
 
-        // when:
-        stop.add(3);
-
-        // then:
-        assertNotNull(stop.poll());
+        assertTimeout(Duration.ofMillis(50), () -> {
+            Main.pressButton(start, stop);
+        });
     }
 }
